@@ -23,15 +23,15 @@ func Dividir(x, y int) int {
 
 func Calcular(x, y int, sinal string) int {
 	
-	if sinal == sinalSubtracao {
-		return Subtrair(x ,y)
-	}
-	if sinal == sinalMultiplicacao {
-		return Multiplicar(x ,y)
-	}
-	if sinal == sinalDivisao {
-		return Dividir(x , y)
+	switch sinal {
+		case sinalSubtracao:
+			return Subtrair(x , y)
+		case sinalMultiplicacao:
+			return Multiplicar( x, y)
+		case sinalDivisao:
+			return Dividir(x , y)
+		default:
+			return Somar(x, y)
 	}
 	
-	return Somar(x ,y)
 }
