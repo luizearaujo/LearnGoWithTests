@@ -23,6 +23,13 @@ func TestMultiplicar(t *testing.T) {
 	verificarResultadoTeste(t, resultado, esperado)
 }
 
+func TestDividir(t *testing.T) {
+	resultado := Dividir(10, 5)
+	esperado := 2
+	
+	verificarResultadoTeste(t, resultado, esperado)
+}
+
 func verificarResultadoTeste(t *testing.T, resultado, esperado int) {
 	t.Helper()
 	
