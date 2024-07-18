@@ -50,6 +50,13 @@ func TestCalcularMultiplicacao(t *testing.T) {
 	verificarResultadoTeste(t, resultado, esperado)
 }
 
+func TestCalcularDividir(t *testing.T) {
+	resultado := Calcular(4, 2, "/")
+	esperado := 2
+	
+	verificarResultadoTeste(t, resultado, esperado)
+}
+
 func verificarResultadoTeste(t *testing.T, resultado, esperado int) {
 	t.Helper()
 	

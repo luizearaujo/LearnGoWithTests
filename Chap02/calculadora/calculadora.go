@@ -24,5 +24,8 @@ func Calcular(x, y int, sinal string) int {
 	if sinal == "*" {
 		return Multiplicar(x ,y)
 	}
+	if sinal == "/" {
+		return Dividir(x , y)
+	}
 	return Somar(x ,y)
 }
