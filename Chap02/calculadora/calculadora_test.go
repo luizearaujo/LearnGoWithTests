@@ -37,6 +37,18 @@ func TestCalcularSoma(t *testing.T) {
 	verificarResultadoTeste(t, resultado, esperado)
 }
 
+func TestCalcularSubtracao(t *testing.T) {
+	resultado := Calcular(3, 1, "-")
+	esperado := 2
+
+	verificarResultadoTeste(t, resultado, esperado)
+}
+
+func TestCalcularMultiplicacao(t *testing.T) {
+	resultado := Calcular(5 , 2, "*")
+	esperado := 10
+	verificarResultadoTeste(t, resultado, esperado)
+}
 
 func verificarResultadoTeste(t *testing.T, resultado, esperado int) {
 	t.Helper()

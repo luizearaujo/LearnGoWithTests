@@ -17,5 +17,12 @@ func Dividir(x, y int) int {
 }
 
 func Calcular(x, y int, sinal string) int {
+	
+	if sinal == "-" {
+		return x - y
+	}
+	if sinal == "*" {
+		return x * y
+	}
 	return x + y
 }
