@@ -19,10 +19,10 @@ func Dividir(x, y int) int {
 func Calcular(x, y int, sinal string) int {
 	
 	if sinal == "-" {
-		return x - y
+		return Subtrair(x ,y)
 	}
 	if sinal == "*" {
-		return x * y
+		return Multiplicar(x ,y)
 	}
-	return x + y
+	return Somar(x ,y)
 }
