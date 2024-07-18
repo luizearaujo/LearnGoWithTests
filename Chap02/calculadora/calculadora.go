@@ -1,5 +1,10 @@
 package calculadora
 
+const sinalSoma = "+"
+const sinalSubtracao = "-"
+const sinalMultiplicacao = "*"
+const sinalDivisao = "/"
+
 func Somar(x , y int) int {
 	return x + y
 }
@@ -18,14 +23,15 @@ func Dividir(x, y int) int {
 
 func Calcular(x, y int, sinal string) int {
 	
-	if sinal == "-" {
+	if sinal == sinalSubtracao {
 		return Subtrair(x ,y)
 	}
-	if sinal == "*" {
+	if sinal == sinalMultiplicacao {
 		return Multiplicar(x ,y)
 	}
-	if sinal == "/" {
+	if sinal == sinalDivisao {
 		return Dividir(x , y)
 	}
+	
 	return Somar(x ,y)
 }
