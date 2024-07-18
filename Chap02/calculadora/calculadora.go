@@ -9,15 +9,15 @@ func somar(x , y int) int {
 	return x + y
 }
 
-func Subtrair(x , y int) int {
+func subtrair(x , y int) int {
 	return x - y
 }
 
-func Multiplicar(x, y int) int {
+func multiplicar(x, y int) int {
 	return x * y
 }
 
-func Dividir(x, y int) int {
+func dividir(x, y int) int {
 	return x / y
 }
 
@@ -25,11 +25,11 @@ func Calcular(x, y int, sinal string) int {
 	
 	switch sinal {
 		case sinalSubtracao:
-			return Subtrair(x , y)
+			return subtrair(x , y)
 		case sinalMultiplicacao:
-			return Multiplicar( x, y)
+			return multiplicar( x, y)
 		case sinalDivisao:
-			return Dividir(x , y)
+			return dividir(x , y)
 		default:
 			return somar(x, y)
 	}

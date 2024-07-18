@@ -2,22 +2,29 @@ package calculadora
 
 import "testing"
 
+func TestSomar(t *testing.T) {
+	resultado := Calcular(1 , 2, "+")
+	esperado := 3
+	
+	verificarResultadoTeste(t, resultado, esperado)
+}
+
 func TestSubtrair(t *testing.T) {
-	resultado := Subtrair(2, 1)
+	resultado := Calcular(2, 1, "-")
 	esperado := 1
 	
 	verificarResultadoTeste(t, resultado, esperado)
 }
 
 func TestMultiplicar(t *testing.T) {
-	resultado := Multiplicar(3 , 2)
+	resultado := Calcular(3 , 2, "*")
 	esperado := 6
 	
 	verificarResultadoTeste(t, resultado, esperado)
 }
 
 func TestDividir(t *testing.T) {
-	resultado := Dividir(10, 5)
+	resultado := Calcular(10, 5, "/")
 	esperado := 2
 	
 	verificarResultadoTeste(t, resultado, esperado)
