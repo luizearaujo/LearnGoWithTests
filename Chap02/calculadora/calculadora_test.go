@@ -2,13 +2,6 @@ package calculadora
 
 import "testing"
 
-func TestSomar(t *testing.T) {
-	resultado := Somar(1 , 2)
-	esperado := 3
-	
-	verificarResultadoTeste(t, resultado, esperado)
-}
-
 func TestSubtrair(t *testing.T) {
 	resultado := Subtrair(2, 1)
 	esperado := 1

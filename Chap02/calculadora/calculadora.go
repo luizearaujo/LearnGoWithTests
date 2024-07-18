@@ -5,7 +5,7 @@ const sinalSubtracao = "-"
 const sinalMultiplicacao = "*"
 const sinalDivisao = "/"
 
-func Somar(x , y int) int {
+func somar(x , y int) int {
 	return x + y
 }
 
@@ -31,7 +31,7 @@ func Calcular(x, y int, sinal string) int {
 		case sinalDivisao:
 			return Dividir(x , y)
 		default:
-			return Somar(x, y)
+			return somar(x, y)
 	}
 	
 }
