@@ -23,7 +23,14 @@ func TestSubtrair(t *testing.T) {
 func TestMultiplicar(t *testing.T) {
 	resultado := Multiplicar(3 , 2)
 	esperado := 6
-	if esperado != resultado {
+	
+	verificarResultadoTeste(t, resultado, esperado)
+}
+
+func verificarResultadoTeste(t *testing.T, resultado, esperado int) {
+	t.Helper()
+	
+	if esperado!=resultado {
 		t.Errorf("esperado '%d', resultado '%d'", esperado, resultado)
 	}
 }
