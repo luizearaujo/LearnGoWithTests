@@ -15,3 +15,7 @@ func Multiplicar(x, y int) int {
 func Dividir(x, y int) int {
 	return x / y
 }
+
+func Calcular(x, y int, sinal string) int {
+	return x + y
+}

@@ -30,6 +30,14 @@ func TestDividir(t *testing.T) {
 	verificarResultadoTeste(t, resultado, esperado)
 }
 
+func TestCalcularSoma(t *testing.T) {
+	resultado := Calcular(2, 2, "+")
+	esperado := 4
+	
+	verificarResultadoTeste(t, resultado, esperado)
+}
+
+
 func verificarResultadoTeste(t *testing.T, resultado, esperado int) {
 	t.Helper()
 	
