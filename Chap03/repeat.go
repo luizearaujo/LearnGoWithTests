@@ -1,8 +1,8 @@
 package repeat
 
-const quantidadeRepeticao = 5
 
-func ImprimirCaracter(caracter string) string{
+
+func ImprimirCaracter(caracter string, quantidadeRepeticao int) string{
 	
 	var saida string
 	
