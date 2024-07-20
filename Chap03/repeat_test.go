@@ -1,6 +1,7 @@
 package repeat
 
 import "testing"
+import "fmt"
 
 func TestImprimirCaracter(t *testing.T) {
 	resultado := ImprimirCaracter("*", 5)
@@ -33,4 +34,10 @@ func BenchmarkImprimirCaracter(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		ImprimirCaracter("b", 3)
 	}
+}
+
+func ExempleImprimirCaracter() {
+	esperado := ImprimirCaracter("b", 3)
+	fmt.Println(esperado)
+	// Output: bbb
 }
