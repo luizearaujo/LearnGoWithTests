@@ -9,4 +9,5 @@ Ao criar um novo projeto, executar o comando:
 ## Capítulos
 1. Capítulo 1 - Olá Mundo - 18/07/2024
 2. Capítulo 2 - Inteiros - 18/07/2024
-3. Capítulo 3 - Interação - 
+3. Capítulo 3 - Interação - 20/07/2024
+4. Capítulo 4 - Array e Slices
