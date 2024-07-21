@@ -1,6 +1,6 @@
 package soma
 
-func Soma(lista [3]int) int {
+func Soma(lista []int) int {
 	
 	resultado := 0
 	for _,numero := range lista {

@@ -2,9 +2,9 @@ package soma
 
 import "testing"
 
-func TestSoma(t *testing.T) {
+func TestSomaComArray(t *testing.T) {
 	
-	numeros := [3]int{1,2,3}
+	numeros := []int{1,2,3}
 	resultado := Soma(numeros)
 	esperado := 6
 	
@@ -13,4 +13,16 @@ func TestSoma(t *testing.T) {
 			esperado, numeros)
 	}
 	
+}
+
+func TestaSomaComSlice(t *testing.T) {
+	
+	lista := []int{1,2,3,4}
+	resultado := Soma(lista)
+	esperado := 10
+	
+	if resultado != esperado {
+		t.Errorf("Resultado '%d', Esperado '%d', Dados '%v'", resultado,
+			esperado, lista)
+	}
 }
