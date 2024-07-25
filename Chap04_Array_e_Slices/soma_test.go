@@ -5,30 +5,30 @@ import (
 	"testing"
 )
 
-<<<<<<< HEAD
-func TestSomaComArray(t *testing.T) {
+func TestSoma(t *testing.T) {
 
-	numeros := []int{1, 2, 3}
-	resultado := Soma(numeros)
-	esperado := 6
+	t.Run("coleção de 3 números", func(t *testing.T) {
 
-	if resultado != esperado {
-		t.Errorf("Resultado '%d', Esperado '%d', Dado '%v'", resultado,
-			esperado, numeros)
-	}
+		numeros := []int{1, 2, 3}
+		resultado := Soma(numeros)
+		esperado := 6
 
-}
+		if resultado != esperado {
+			t.Errorf("Resultado '%d', Esperado '%d', Dado '%v'", resultado,
+				esperado, numeros)
+		}
+	})
 
-func TestaSomaComSlice(t *testing.T) {
+	t.Run("coleção com qualquer tamanho", func(t *testing.T) {
+		lista := []int{1, 2, 3, 4}
+		resultado := Soma(lista)
+		esperado := 10
 
-	lista := []int{1, 2, 3, 4}
-	resultado := Soma(lista)
-	esperado := 10
-
-	if resultado != esperado {
-		t.Errorf("Resultado '%d', Esperado '%d', Dados '%v'", resultado,
-			esperado, lista)
-	}
+		if resultado != esperado {
+			t.Errorf("Resultado '%d', Esperado '%d', Dados '%v'", resultado,
+				esperado, lista)
+		}
+	})
 }
 
 func TestSomaTudo(t *testing.T) {
@@ -41,31 +41,3 @@ func TestSomaTudo(t *testing.T) {
 	}
 
 }
-=======
-func TestSoma(t *testing.T) {
-	
-	t.Run("coleção de 3 números", func(t *testing.T) {
-	
-		numeros := []int{1,2,3}
-		resultado := Soma(numeros)
-		esperado := 6
-		
-		if resultado != esperado {
-			t.Errorf("Resultado '%d', Esperado '%d', Dado '%v'", resultado, 
-				esperado, numeros)
-		}
-	})
-	
-	t.Run("coleção com qualquer tamanho", func(t *testing.T) {
-		lista := []int{1,2,3,4}
-		resultado := Soma(lista)
-		esperado := 10
-		
-		if resultado != esperado {
-			t.Errorf("Resultado '%d', Esperado '%d', Dados '%v'", resultado,
-				esperado, lista)
-		}
-	})
-}
-
->>>>>>> 2b4386b (Refatoração dos testes para criação de sub funções)
