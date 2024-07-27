@@ -31,7 +31,8 @@ func SomaCauda(numerosParaSomar ...[]int) []int {
 	var somas []int
 	
 	for _, numeros := range numerosParaSomar {
-		somas = append(somas, somaCauda(numeros))
+		final := numeros[1:]
+		somas = append(somas, Soma(final))
 	}
 	
 	return somas
