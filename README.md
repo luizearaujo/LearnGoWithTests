@@ -10,4 +10,5 @@ Ao criar um novo projeto, executar o comando:
 1. Capítulo 1 - Olá Mundo - 18/07/2024
 2. Capítulo 2 - Inteiros - 18/07/2024
 3. Capítulo 3 - Interação - 20/07/2024
-4. Capítulo 4 - Array e Slices
+4. Capítulo 4 - Array e Slices - 26/07/2024
+5. Capítulo 5 - Estruturas, métodos e interfaces
