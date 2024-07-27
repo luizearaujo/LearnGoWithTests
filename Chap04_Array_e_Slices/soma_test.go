@@ -41,3 +41,13 @@ func TestSomaTudo(t *testing.T) {
 	}
 
 }
+
+func TestSomaCauda(t *testing.T) {
+	
+	resultado := SomaCauda([]int{1,2}, []int{0,9})
+	esperado := []int{2,9}
+	
+	if !reflect.DeepEqual(resultado, esperado) {
+		t.Errorf("Resultado '%v', Esperado '%v'", resultado, esperado)
+	}
+}
