@@ -9,14 +9,6 @@ func Soma(lista []int) int {
 	return resultado
 }
 
-func somaCauda(lista []int) int {
-	resultado := 0
-	for i:=1; i < len(lista); i++ {
-		resultado += lista[i]
-	}
-	return resultado
-}
-
 func SomaTudo(numerosParaSomar ...[]int) []int {
 
 	var somas []int
@@ -31,8 +23,12 @@ func SomaCauda(numerosParaSomar ...[]int) []int {
 	var somas []int
 	
 	for _, numeros := range numerosParaSomar {
-		final := numeros[1:]
-		somas = append(somas, Soma(final))
+		if len(numeros) == 0 {
+			somas = append(somas, 0)
+		} else {
+			final := numeros[1:]
+			somas = append(somas, Soma(final))
+		}
 	}
 	
 	return somas
