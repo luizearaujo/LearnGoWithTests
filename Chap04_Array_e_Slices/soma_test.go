@@ -44,14 +44,19 @@ func TestSomaTudo(t *testing.T) {
 
 func TestSomaCauda(t *testing.T) {
 	
+	verificarSomas := func(t *testing.T, resultado, esperado []int) {
+		t.Helper()
+		if !reflect.DeepEqual(resultado, esperado) {
+			t.Errorf("Resultado '%v', Esperado '%v'", resultado, esperado)
+		}
+	}
+	
 	t.Run("Soma cauda de um slice de duas posições", func(t *testing.T) {
 	
 		resultado := SomaCauda([]int{1,2}, []int{0,9})
 		esperado := []int{2,9}
 		
-		if !reflect.DeepEqual(resultado, esperado) {
-			t.Errorf("Resultado '%v', Esperado '%v'", resultado, esperado)
-		}
+		verificarSomas(t, resultado, esperado)
 	})
 	
 	t.Run("Soma cauda de slices de diferentes tamanhos", func(t *testing.T) {
@@ -59,17 +64,13 @@ func TestSomaCauda(t *testing.T) {
 		resultado := SomaCauda([]int{1,2,3}, []int{1,1,1}, []int{2,9,7,8})
 		esperado := []int{5,2,24}
 		
-		if !reflect.DeepEqual(resultado, esperado) {
-			t.Errorf("Resultado '%v', Esperado '%v'", resultado, esperado)
-		}
+		verificarSomas(t, resultado, esperado)
 	})
 	
 	t.Run("Soma cauda de slices vazios", func(t *testing.T) {
 		resultado := SomaCauda([]int{1,2}, []int{})
 		esperado := []int{2,0}
 		
-		if !reflect.DeepEqual(resultado, esperado) {
-			t.Errorf("Resultado '%v', Esperado '%v'", resultado, esperado)
-		}
+		verificarSomas(t, resultado, esperado)
 	})
 }
