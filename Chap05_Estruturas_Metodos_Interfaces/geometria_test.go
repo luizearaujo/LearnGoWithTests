@@ -6,7 +6,7 @@ import (
 
 func TestPerimetro(t *testing.T) {
 	retangulo := Retangulo{10.0, 10.0}
-	resultado := Perimetro(retangulo)
+	resultado := retangulo.Perimetro()
 	esperado := 40.0
 	
 	if resultado != esperado {
