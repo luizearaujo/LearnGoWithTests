@@ -16,23 +16,28 @@ func TestPerimetro(t *testing.T) {
 
 func TestArea(t *testing.T) {
 	
-	t.Run("Retangulo", func(t *testing.T) {
-		retangulo := Retangulo{12.0, 6.0}
-		resultado := retangulo.Area()
-		esperado := 72.0
+	verificarArea := func(t *testing.T, forma Forma, esperado float64) {
 		
-		if resultado != esperado {
-			t.Errorf("Resultado '%.2f', Esperado '%.2f'", resultado, esperado)
-		}	
-	})
-	
-	t.Run("Circulo", func(t *testing.T) {
-		circulo := Circulo{10.0}
-		resultado := circulo.Area()
-		esperado := 314.1592653589793
+		t.Helper()
+		resultado := forma.Area()
 		
 		if resultado != esperado {
 			t.Errorf("Resultado '%.2f', Esperado '%.2f'", resultado, esperado)
 		}
+	}
+	
+	
+	t.Run("Retangulo", func(t *testing.T) {
+		retangulo := Retangulo{12.0, 6.0}
+		esperado := 72.0
+		
+		verificarArea(t, retangulo, esperado)	
+	})
+	
+	t.Run("Circulo", func(t *testing.T) {
+		circulo := Circulo{10.0}
+		esperado := 314.1592653589793
+		
+		verificarArea(t, circulo, esperado)
 	})
 }
