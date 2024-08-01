@@ -1,5 +1,5 @@
 # LearnGoWithTests
-Código gerado durante os estudos do livro [Learn GO With Tests](https://quii.gitbook.io/learn-go-with-tests).
+Código gerado durante os estudos do livro [Learn GO With Tests](https://quii.gitbook.io/learn-go-with-tests) | [PDF](Resources/aprenda-go-com-testes.pdf).
 
 ## Pré-Req
 Ao criar um novo projeto, executar o comando:
