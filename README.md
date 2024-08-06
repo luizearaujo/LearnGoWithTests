@@ -12,4 +12,5 @@ Ao criar um novo projeto, executar o comando:
 3. Capítulo 3 - Interação - 20/07/2024
 4. Capítulo 4 - Array e Slices - 26/07/2024
 5. Capítulo 5 - Estruturas, métodos e interfaces - 01/08/2024
-5. Capítulo 6 - Ponteiros e Erros - 
+6. Capítulo 6 - Ponteiros e Erros - 06/08/2024
+7. Capítulo 7 - Maps
