@@ -2,6 +2,8 @@ package stock_broker
 
 import "errors"
 
+var ErroSaldoInsuficiente = errors.New("Saldo insuficiente")
+
 type Carteira struct {
 	saldo Bitcoin
 }
@@ -17,7 +19,7 @@ func (c *Carteira) Saldo() Bitcoin {
 func (c *Carteira) Retirar(quantidade Bitcoin) error {
 
 	if quantidade > c.saldo {
-		return errors.New("Saldo insuficiente")
+		return ErroSaldoInsuficiente
 	}
 
 	c.saldo -= quantidade
