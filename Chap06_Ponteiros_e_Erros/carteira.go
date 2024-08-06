@@ -1,7 +1,5 @@
 package stock_broker
 
-type Bitcoin int
-
 type Carteira struct {
 	saldo Bitcoin
 }
