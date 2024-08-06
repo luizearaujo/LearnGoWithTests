@@ -31,4 +31,19 @@ func TestCarteira(t *testing.T) {
 		}
 	})
 
+	t.Run("retirar", func(t *testing.T) {
+
+		carteira := Carteira{}
+		carteira.Depositar(Bitcoin(10))
+		carteira.Retirar(Bitcoin(5))
+
+		resultado := carteira.Saldo()
+		esperado := Bitcoin(5)
+
+		if resultado != esperado {
+			t.Errorf("Resultado '%d', Esperado '%d'", resultado, esperado)
+		}
+
+	})
+
 }
