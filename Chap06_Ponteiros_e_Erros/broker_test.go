@@ -1,7 +1,6 @@
 package stock_broker
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,9 +10,7 @@ func TestCarteira(t *testing.T) {
 	carteira.Depositar(10)
 
 	resultado := carteira.Saldo()
-	esperado := 10
-
-	fmt.Printf("O endereço do saldo no testo é %v \n", &carteira.saldo)
+	esperado := Bitcoin(10)
 
 	if resultado != esperado {
 		t.Errorf("Resultado '%d', Esperado '%d'", resultado, esperado)

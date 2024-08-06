@@ -1,18 +1,15 @@
 package stock_broker
 
-import (
-	"fmt"
-)
+type Bitcoin int
 
 type Carteira struct {
-	saldo int
+	saldo Bitcoin
 }
 
-func (c *Carteira) Depositar(quantidade int) {
-	fmt.Printf("O endereço do saldo no Depositar é %v \n", &c.saldo)
+func (c *Carteira) Depositar(quantidade Bitcoin) {
 	c.saldo += quantidade
 }
 
-func (c *Carteira) Saldo() int {
+func (c *Carteira) Saldo() Bitcoin {
 	return c.saldo
 }
