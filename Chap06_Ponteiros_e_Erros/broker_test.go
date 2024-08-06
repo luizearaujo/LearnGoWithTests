@@ -18,17 +18,24 @@ func TestCarteira(t *testing.T) {
 		}
 	})
 
+	confirmarSaldo := func(t *testing.T, carteira Carteira, esperado Bitcoin) {
+		t.Helper()
+
+		resultado := carteira.Saldo()
+
+		if resultado != esperado {
+			t.Errorf("Resultado '%d', Esperado '%d'", resultado, esperado)
+		}
+	}
+
 	t.Run("depositar", func(t *testing.T) {
 
 		carteira := Carteira{}
 		carteira.Depositar(Bitcoin(10))
 
-		resultado := carteira.Saldo()
 		esperado := Bitcoin(10)
 
-		if resultado != esperado {
-			t.Errorf("Resultado '%d', Esperado '%d'", resultado, esperado)
-		}
+		confirmarSaldo(t, carteira, esperado)
 	})
 
 	t.Run("retirar", func(t *testing.T) {
@@ -37,13 +44,32 @@ func TestCarteira(t *testing.T) {
 		carteira.Depositar(Bitcoin(10))
 		carteira.Retirar(Bitcoin(5))
 
-		resultado := carteira.Saldo()
 		esperado := Bitcoin(5)
 
-		if resultado != esperado {
-			t.Errorf("Resultado '%d', Esperado '%d'", resultado, esperado)
+		confirmarSaldo(t, carteira, esperado)
+
+	})
+
+	confirmarErro := func(t *testing.T, erro error, esperado string) {
+		t.Helper()
+		if erro == nil {
+			t.Fatal("Esperava um erro, mas nenhum ocorreu.")
+		}
+		if erro.Error() != esperado {
+			t.Errorf("Resultado '%s', Esperado '%s'", erro, esperado)
 		}
 
+	}
+
+	t.Run("retirar com saldo insuficiente", func(t *testing.T) {
+
+		saldoInicial := Bitcoin(20)
+		carteira := Carteira{saldoInicial}
+		erro := carteira.Retirar(Bitcoin(100))
+
+		confirmarSaldo(t, carteira, saldoInicial)
+
+		confirmarErro(t, erro, "Saldo insuficiente")
 	})
 
 }
