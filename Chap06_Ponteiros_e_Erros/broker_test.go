@@ -32,11 +32,12 @@ func TestCarteira(t *testing.T) {
 
 		carteira := Carteira{}
 		carteira.Depositar(Bitcoin(10))
-		carteira.Retirar(Bitcoin(5))
+		erro := carteira.Retirar(Bitcoin(5))
 
 		esperado := Bitcoin(5)
 
 		confirmarSaldo(t, carteira, esperado)
+		confirmarErroInexistente(t, erro)
 
 	})
 
@@ -50,6 +51,15 @@ func TestCarteira(t *testing.T) {
 
 		confirmarErro(t, erro, ErroSaldoInsuficiente)
 	})
+
+}
+
+func confirmarErroInexistente(t *testing.T, erro error) {
+
+	t.Helper()
+	if erro != nil {
+		t.Fatal("Ocorreu um erro inesperado")
+	}
 
 }
 
