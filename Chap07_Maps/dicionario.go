@@ -4,6 +4,8 @@ import (
 	
 )
 
-func Busca(mapa map[string]string, index string) string {
-	return mapa[index]
+type Dicionario map[string]string
+
+func (d Dicionario) Busca(index string) string {
+	return d[index]
 }

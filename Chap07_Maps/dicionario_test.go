@@ -6,9 +6,9 @@ import (
 
 func TestBusca(t *testing.T) {
 	
-	dicionario := map[string]string{"teste":"isso é apenas um teste"}
+	dicionario := Dicionario{"teste":"isso é apenas um teste"}
 	
-	actual := Busca(dicionario, "teste")
+	actual := dicionario.Busca("teste")
 	expected := "isso é apenas um teste"
 	
 	comparaString(t, actual, expected)
