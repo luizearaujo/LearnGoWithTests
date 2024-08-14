@@ -1,12 +1,5 @@
 package main
 
-import (
-	"errors"
-)
-
-var ErrorIndexNotFound = errors.New("Não foi possível encontrar a informação a partir do index.")
-var ErrorIndexAlreadyInMap = errors.New("Chave já existente no map.")
-
 
 type Dicionario map[string]string
 
@@ -26,7 +19,7 @@ func (d Dicionario) Adiciona(key, value string) error {
 		case ErrorIndexNotFound:
 			d[key] = value
 		case nil :
-			return ErrorIndexAlreadyInMap
+			return ErrorIndexAlreadyExist
 		default :
 			return err
 	}

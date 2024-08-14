@@ -45,7 +45,7 @@ func TestAdicionar(t *testing.T) {
 		
 		err := dicionario.Adiciona(key, "Esta chave já existe")
 		
-		comparaErro(t, err, ErrorIndexAlreadyInMap)
+		comparaErro(t, err, ErrorIndexAlreadyExist)
 		comparaDefinicao(t, dicionario, key, value)
 	})
 	
